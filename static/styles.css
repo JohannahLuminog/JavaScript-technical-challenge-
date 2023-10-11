@@ -1,10 +1,28 @@
-.spinner{
+.spinner {
   font-size: 140px;
 }
+
 .spinner:after {
   content: '◌';
 }
 
 #chart {
-    border: 1px solid black;
+  border: 1px solid black;
+}
+
+/* Define the keyframes for rotation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply the animation to .spinner */
+.spinner {
+  font-size: 140px;
+  display: inline-block; 
+  animation: spin 10s linear infinite; /* Adjust the duration (2s) as needed */
 }
