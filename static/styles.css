@@ -23,6 +23,7 @@
 /* Apply the animation to .spinner */
 .spinner {
   font-size: 140px;
-  display: inline-block; 
-  animation: spin 10s linear infinite; /* Adjust the duration (2s) as needed */
+  display: inline-block;
+  width: 140px;
+  animation: spin 5s linear infinite; /* Adjust the duration (2s) as needed */
 }

@@ -29,7 +29,7 @@ let stockSymbols = [];
 // Code to query the backend for the list of available stocks and data for each stock
 document.addEventListener('DOMContentLoaded', function () {
   // Make the spinner visible
-  const spinner = document.getElementById('spinner');
+  const spinner = document.querySelector('.spinner'); // Adjust the selector
   spinner.style.display = 'block';
 
    fetch('/stocks')
@@ -71,3 +71,4 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error('Error:', error);
     });
 });
+
