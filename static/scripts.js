@@ -1,6 +1,7 @@
-const canvas = document.getElementById('chart');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById('chart'); // Get the canvas element for the chart
+const ctx = canvas.getContext('2d'); // Get the 2D rendering context 
 
+// Function to draw a line between two points 
 function drawLine(start, end, style) {
   ctx.beginPath();
   ctx.strokeStyle = style || 'black';
@@ -9,6 +10,7 @@ function drawLine(start, end, style) {
   ctx.stroke();
 }
 
+// Function to draw a triangle between three points 
 function drawTriangle(apex1, apex2, apex3) {
   ctx.beginPath();
   ctx.moveTo(...apex1);
@@ -28,14 +30,14 @@ let stockSymbols = [];
 
 // Code to query the backend for the list of available stocks and data for each stock
 document.addEventListener('DOMContentLoaded', function () {
-  // Make the spinner visible
-  const spinner = document.querySelector('.spinner'); // Adjust the selector
-  spinner.style.display = 'block';
+  
+  const spinner = document.querySelector('.spinner'); // Select the spinner element with class "spinner"
+  spinner.style.display = 'block'; // Make the spinner visible
 
-   fetch('/stocks')
+   fetch('/stocks') //Fetch the list of available stocks 
     .then((response) => {
       if (!response.ok) {
-        throw new Error('Failed to fetch stock data');
+        throw new Error('Failed to fetch list of available stocks'); 
       }
       return response.json();
     })
@@ -48,15 +50,15 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch(`/stocks/${symbol}`)
           .then((response) => {
             if (!response.ok) {
-              throw new Error(`Failed to fetch data for ${symbol}`);
+              throw new Error(`Failed to fetch data for ${symbol}`); // Extract and throw the error message
             }
             return response.json();
           })
           .then((stockData) => {
             console.log(`Data for ${symbol}:`);
-            console.table(stockData); // Use console.table to display data in a structured/tabular way
+            console.table(stockData); // Use console.table to display data in a tabular structure
 
-            // You can now do something with the data for each stock
+            // You can now do something with the data for each stock e.g. add function to create line chart
           })
           .catch((error) => {
             console.error('Error:', error);

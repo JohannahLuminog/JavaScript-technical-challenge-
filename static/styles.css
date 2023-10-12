@@ -1,13 +1,13 @@
 .spinner {
-  font-size: 140px;
+  font-size: 140px; /* Set font size for spinner */
 }
 
 .spinner:after {
-  content: '◌';
+  content: '◌'; /* Content for the spinner element */
 }
 
 #chart {
-  border: 1px solid black;
+  border: 1px solid black; /* Add a border to the chart canvas */
 }
 
 /* Define the keyframes for rotation */
@@ -24,6 +24,6 @@
 .spinner {
   font-size: 140px;
   display: inline-block;
-  width: 140px;
-  animation: spin 5s linear infinite; /* Adjust the duration (2s) as needed */
+  width: 140px; /* Without this line the spinner rotates too wide */
+  animation: spin 5s linear infinite; /* Adjust the duration (30s) as needed */
 }
