@@ -18,7 +18,7 @@ app.get('/stocks', async (req, res) => {
 // Route to get data for a specific stock
 app.get('/stocks/:symbol', async (req, res) => {
   const { params: { symbol } } = req;
-  //Use try-catch block to catch errors and send an error message
+  // Use try-catch block to catch errors and send an error message
   try {
     const data = await stocks.getStockPoints(symbol, new Date());
     res.send(data);

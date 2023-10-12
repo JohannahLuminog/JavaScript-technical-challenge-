@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const spinner = document.querySelector('.spinner'); // Select the spinner element with class "spinner"
   spinner.style.display = 'block'; // Make the spinner visible
 
-   fetch('/stocks') //Fetch the list of available stocks 
+   fetch('/stocks') // Fetch the list of available stocks 
     .then((response) => {
       if (!response.ok) {
         throw new Error('Failed to fetch list of available stocks'); 
